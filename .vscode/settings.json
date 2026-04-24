@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "C:/Users/Surface Pro6/javafx-sdk-23.0.2/lib/*.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.autobuild.enabled": true
+}
