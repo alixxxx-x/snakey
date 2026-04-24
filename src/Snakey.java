@@ -26,7 +26,7 @@ import java.util.Random;
 import javafx.scene.media.AudioClip;
 import java.io.File;
 
-public class HelloFX extends Application {
+public class Snakey extends Application {
 
     static final int TILE = 20;
     static final int COLS = 30;
