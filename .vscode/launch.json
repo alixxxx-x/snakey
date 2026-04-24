@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Snakey",
+            "request": "launch",
+            "mainClass": "Snakey",
+            "vmArgs": "--module-path \"C:/Users/Surface Pro6/javafx-sdk-23.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.media --add-exports=javafx.base/com.sun.javafx=ALL-UNNAMED --enable-native-access=javafx.graphics,javafx.media"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld"
+        }
+    ]
+}
