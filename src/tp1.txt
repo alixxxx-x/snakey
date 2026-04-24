@@ -1,0 +1,107 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
+import javafx.stage.Stage;
+import javafx.scene.layout.Region;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+
+public class HelloFX extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        
+        Label label =new Label("Enter your password:");
+        Button button1 = new Button("Login");
+        TextField tf= new TextField();
+        Button button2 = new Button("Cancel");
+        HBox root = new HBox(20,label,tf);
+        root.setAlignment(Pos.CENTER);
+        HBox root2 = new HBox(20,button1,button2);
+        root2.setAlignment(Pos.CENTER);
+        VBox oroot = new VBox(root,root2);
+        oroot.setAlignment(Pos.CENTER);
+        oroot.setSpacing(10);
+    
+        BorderPane borderPane = new BorderPane(oroot);
+        
+        Scene scene = new Scene(borderPane,500, 200);
+
+        
+        stage.setTitle("amir");
+        stage.setScene(scene);
+        stage.show();
+
+        VBox root5 = new VBox();
+        Label label5 = new Label("amir bhi");
+
+        Pane drawArea = new Pane();
+        drawArea.setPrefSize(300, 150);
+
+        drawArea.setStyle(
+            "-fx-background-color: white;" +
+            "-fx-border-color: gray;" +
+            "-fx-border-width: 2;"
+        );
+
+        root5.getChildren().addAll(label5, drawArea);
+        root5.setSpacing(10);
+        root5.setPadding(new Insets(10,0,0,0));
+
+        TilePane root4 = new TilePane();
+        Button buttonX = new Button("slow down");
+        Button buttonY = new Button("slow down");
+        Button buttonZ = new Button("slow down");
+        Button buttonW = new Button("slow down");
+
+        root4.getChildren().addAll(buttonX, buttonY, buttonZ, buttonW);
+        root4.setPrefColumns(2);
+        root4.setMaxWidth(Region.USE_PREF_SIZE);
+        buttonX.setPrefSize(110,90);
+        buttonY.setPrefSize(110,90);
+        buttonZ.setPrefSize(110,90);
+        buttonW.setPrefSize(110,90);
+
+
+        /* spacer to push TilePane right */
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+
+        HBox root6 = new HBox();
+        root6.getChildren().addAll(root5, spacer, root4);
+        root6.setPadding(new Insets(0, 0, 0, 40));
+
+        Button button3 = new Button("accelerate");
+        Button button4 = new Button("slow down");
+
+        HBox root3 = new HBox(20, button3, button4);
+        root3.setAlignment(Pos.CENTER);
+
+        VBox pane = new VBox();
+        pane.getChildren().addAll(root6, root3);
+        pane.setSpacing(20);
+
+        Scene scene2 = new Scene(pane, 600, 250);
+        Stage stage1 = new Stage();
+
+        stage1.setScene(scene2);
+        stage1.setTitle("aymen");
+        stage1.show();
+
+
+
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
+
