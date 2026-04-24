@@ -1,0 +1,37 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+public class HelloFX extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        
+        Label l = new Label("Press any letter");
+        l.setLayoutX(20);
+        l.setLayoutY(20);
+        
+        Pane root = new Pane();
+        root.setPrefSize(600, 400);
+
+        
+        root.getChildren().add(l);
+        
+        Scene scene = new Scene(root);
+        
+
+        scene.setOnKeyPressed(e -> {
+            l.setText("Pressed: " + e.getText());
+        });
+
+        stage.setTitle("aymen");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}

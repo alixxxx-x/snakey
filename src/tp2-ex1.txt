@@ -1,0 +1,108 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.layout.Priority;
+import javafx.stage.Stage;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+
+public class HelloFX extends Application {
+
+    @Override
+    public void start(Stage stage) {
+
+        
+        TextField num1 = new TextField();
+        num1.setPrefColumnCount(4);
+        TextField num2 = new TextField();
+        num2.setPrefColumnCount(4);
+        TextField res = new TextField();
+        res.setPrefColumnCount(6);
+
+
+        Label l1 = new Label("num1: ");
+        Label l2 = new Label("num2: ");
+        Label l3 = new Label("res: ");
+
+
+        HBox io = new HBox();
+        io.getChildren().addAll(l1,num1,l2,num2,l3,res);
+        io.setAlignment(Pos.CENTER);
+
+
+
+        
+
+        Button add = new Button("+");
+        add.setPrefSize(40,20);
+        Button subs = new Button("-");
+        subs.setPrefSize(40,20);
+        Button mult = new Button("x");
+        mult.setPrefSize(40,20);
+        Button div = new Button("/");
+        div.setPrefSize(40,20);
+
+        HBox buttons = new HBox();
+        buttons.getChildren().addAll(add,subs,mult,div);
+        buttons.setAlignment(Pos.CENTER);
+        buttons.setSpacing(10);
+
+        VBox root = new VBox();
+        root.getChildren().addAll(io,buttons);
+        root.setAlignment(Pos.CENTER);
+        root.setSpacing(25);
+
+        Scene scene = new Scene(root,700,700);
+
+        add.setOnAction(e -> {
+            double a = Double.parseDouble(num1.getText());
+            double b = Double.parseDouble(num2.getText());
+            res.setText(String.valueOf(a + b));
+
+        });
+        subs.setOnAction(e -> {
+            double a = Double.parseDouble(num1.getText());
+            double b = Double.parseDouble(num2.getText());
+            res.setText(String.valueOf(a - b));
+            
+        });
+        mult.setOnAction(e -> {
+            double a = Double.parseDouble(num1.getText());
+            double b = Double.parseDouble(num2.getText());
+            res.setText(String.valueOf(a * b));
+            
+        });
+        div.setOnAction(e -> {
+            double a = Double.parseDouble(num1.getText());
+            double b = Double.parseDouble(num2.getText());
+            res.setText(String.valueOf(a / b));
+            
+        });
+
+
+        stage.setScene(scene);
+        stage.setTitle("aymen");
+        stage.show();
+
+
+
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
+
